@@ -10,38 +10,44 @@ Version: 1.0
 
 @font-face {
     font-family: Museo;
-    src: url("/assets/fonts/MuseoSansRounded-100.otf") format("opentype");
+    src: url("/assets/fonts/MuseoSansRounded-100.otf");
     font-weight:100;
+    font-style: normal;
 }
 
 @font-face {
     font-family: Museo;
-    src: url("/assets/fonts/MuseoSansRounded-100.otf") format("opentype");
+    src: url("/assets/fonts/MuseoSansRounded-100.otf");
     font-weight:300;
+    font-style: normal;
 }
 
 @font-face {
     font-family: Museo;
-    src: url("/assets/fonts/MuseoSansRounded-100.otf") format("opentype");
+    src: url("/assets/fonts/MuseoSansRounded-100.otf");
     font-weight:500;
+    font-style: normal;
 }
 
 @font-face {
     font-family: Museo;
-    src: url("/assets/fonts/MuseoSansRounded-100.otf") format("opentype");
+    src: url("/assets/fonts/MuseoSansRounded-100.otf");
     font-weight:700;
+    font-style: normal;
 }
 
 @font-face {
     font-family: Museo;
-    src: url("/assets/fonts/MuseoSansRounded-100.otf") format("opentype");
+    src: url("/assets/fonts/MuseoSansRounded-100.otf");
     font-weight:900;
+    font-style: normal;
 }
 
 @font-face {
     font-family: Museo;
-    src: url("/assets/fonts/MuseoSansRounded-100.otf") format("opentype");
+    src: url("/assets/fonts/MuseoSansRounded-100.otf");
     font-weight:1000;
+    font-style: normal;
 }
 
 
@@ -52,6 +58,7 @@ body {
 
 h1 {
   font-family:Museo, Arial, sans-serif;
+  font-weight:100;
 }
 
 .post-content {
@@ -73,10 +80,21 @@ h1 {
   color:orange;
 }
 
+.favs .comments {
+  color:grey;
+  display: inline;
+}
 
-/* shortcode */
-.someone_sc {
-  color:purple;
+
+.shortstyle1 {
+  color:red;
+}
+
+.left-custom-quote {
+  text-align: left;
+}
+.right-custom-quote {
+  text-align:right;
 }
 
 /* styling of right buttons *

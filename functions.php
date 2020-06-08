@@ -3,7 +3,7 @@
 include('shortcodes.php');
 
 function uniduck_register_styles(){
-  wp_enqueue_style('uniduck-style', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
+  wp_enqueue_style('uniduck-style', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0', 'all');
   wp_enqueue_style('uniduck-bootstrap', "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css", array(), '1.0', 'all');
   wp_enqueue_style('uniduck-fontawesome', "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css", array(), '1.0', 'all');
 
@@ -70,25 +70,24 @@ function show_tags()
 
 // shortcodes
 
+function custom_quote_function( $atts = array(), $content = null ) {
 
+    if($atts != null){
+      $position = $atts['position'];
 
+      if($position == 'left') {
+        return '<span class="left-custom-quote">' . $content . '</span>';
+      } elseif ($position == 'right') {
+        return '<span class="right-custom-quote">' . $content . '</span>';
+      } else {
+        return '<span class="custom-quote">' . $content . '</span>';
+      }
+    } else {
+      return '<span class="custom-quote">' . $content . '</span>';
+    }
 
-function everyone_shortcode(){
-  return '<p class="short_2">"Everyone believed that <br / >it was just a legend, that it wasn\'t <br /> a real place... >"</p>';
 }
-add_shortcode('everyone_sc', 'everyone_shortcode');
 
-
-// favs & comments
-
-function fav_shortcode(){
-  return '<div class="fav"> 17 faves</div>';
-}
-add_shortcode('fav_sc', 'fav_shortcode');
-
-function comment_shortcode(){
-  return '<div class="comments"> 22 comments</div>';
-}
-add_shortcode('comment_sc', 'comment_shortcode');
+add_shortcode('custom_quote', 'custom_quote_function');
 
 ?>

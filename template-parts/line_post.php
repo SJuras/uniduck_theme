@@ -20,6 +20,9 @@
 		echo show_tags();
 	?>
 
+	<div class="favs">17 favs</div>
+	<div class="comments">22 comments</div>
+
 
 
 

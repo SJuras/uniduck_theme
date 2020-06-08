@@ -73,35 +73,6 @@
       <?php endif; ?>
 
 
-    <!-- Ajax -->
-
-    <div id="ajax-posts" class="row">
-        <?php
-            $postsPerPage = 3;
-            $args = array(
-                    'post_type' => 'post',
-                    'posts_per_page' => $postsPerPage,
-            );
-
-            $loop = new WP_Query($args);
-
-            while ($loop->have_posts()) : $loop->the_post();
-        ?>
-
-         <div class="col-md-4">
-                <h1><?php the_title(); ?></h1>
-                <p><?php the_content(); ?></p>
-         </div>
-
-         <?php
-                endwhile;
-        wp_reset_postdata();
-         ?>
-    </div>
-    <div id="more_posts">Load More</div>
-
-    <!-- Ajax End -->
-
     <div>
         <a href="#" id="load_more" class="btn btn-primary">Load More</a>
     </div>
