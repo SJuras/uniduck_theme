@@ -8,7 +8,7 @@
 	<p><?php the_excerpt(); ?></p>
 	<p><a href="<?php the_permalink(); ?>">Read More</a></p>
 
-	<p><?php the_author(); ?></p>
+
 
 	<?php
 		$name = 'Kreso The Duck';
