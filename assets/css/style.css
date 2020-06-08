@@ -5,51 +5,54 @@ Version: 1.0
 **/
 
 /* colors */
+/* primary: #dc4ba3 */
+/* siva: #b3b3b3*/
 
 /* fonts */
 
 @font-face {
     font-family: Museo;
-    src: url("/assets/fonts/MuseoSansRounded-100.otf");
+    src: url("../fonts/MuseoSansRounded-100.otf");
     font-weight:100;
     font-style: normal;
 }
 
 @font-face {
     font-family: Museo;
-    src: url("/assets/fonts/MuseoSansRounded-100.otf");
+    src: url("../fonts/MuseoSansRounded-300.otf");
     font-weight:300;
     font-style: normal;
 }
 
 @font-face {
     font-family: Museo;
-    src: url("/assets/fonts/MuseoSansRounded-100.otf");
+    src: url("../fonts/MuseoSansRounded-500.otf");
     font-weight:500;
     font-style: normal;
 }
 
 @font-face {
     font-family: Museo;
-    src: url("/assets/fonts/MuseoSansRounded-100.otf");
+    src: url("../fonts/MuseoSansRounded-700.otf");
     font-weight:700;
     font-style: normal;
 }
 
 @font-face {
     font-family: Museo;
-    src: url("/assets/fonts/MuseoSansRounded-100.otf");
+    src: url("../fonts/MuseoSansRounded-900.otf");
     font-weight:900;
     font-style: normal;
 }
 
 @font-face {
     font-family: Museo;
-    src: url("/assets/fonts/MuseoSansRounded-100.otf");
+    src: url("../fonts/MuseoSansRounded-1000.otf");
     font-weight:1000;
     font-style: normal;
 }
 
+/* general */
 
 body {
   font-family: Museo, Arial, sans-serif;
@@ -61,6 +64,64 @@ h1 {
   font-weight:100;
 }
 
+/* menu */
+
+.navbar-nav li a {
+  padding: 10px 20px;
+  border-radius:5px;
+  color:#5b5b5b;
+  font-weight:700;
+  display: inline-flex;
+}
+
+.navbar-nav li a:hover,
+.navbar-nav li a:focus {
+  text-decoration: none;
+  color: #dc4ba3;
+}
+
+.navbar-nav li.menu-btn-primary a {
+  background-color: #dc4ba3;
+  color: #fff;
+  font-size: 14px;
+}
+
+.navbar-nav li.menu-btn-primary a::before,
+.navbar-nav li.menu-btn-secondary a::before {
+  content: "";
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.navbar-nav li.menu-btn-primary a::before {
+  background-image: url("../icons/ic-apple.svg");
+}
+
+.navbar-nav li.menu-btn-secondary a {
+  background-color: #b3b3b3;
+  color: #fff;
+  font-size: 14px;
+}
+
+.navbar-nav li.menu-btn-secondary a::before {
+  background-image: url("../icons/ic-unicorn.svg");
+}
+
+.navbar-nav li.menu-btn-primary a:hover,
+.navbar-nav li.menu-btn-primary a:focus {
+  background-color: #b03c82;
+  color: #fff;
+}
+
+.menu-top-bar-container {
+  margin-left: auto;
+}
+
+
 .post-content {
   padding: 0 10rem;
 }
@@ -68,7 +129,7 @@ h1 {
 .post-content p {
   font-size: 20px;
   font-weight: bold;
-  color:#000;
+  color: #000;
 }
 
 .post-content img  {
