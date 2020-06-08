@@ -70,10 +70,7 @@ function show_tags()
 
 // shortcodes
 
-function someone_shortcode(){
-  return '<p class="someone_sc">Someone saw a white creature <br /> with the looks of a horse, yet <br /> having a beautiful horn... </p>';
-}
-add_shortcode('someone_sc', 'someone_shortcode');
+
 
 
 function everyone_shortcode(){
