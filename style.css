@@ -1,0 +1,38 @@
+/**
+Theme Name: Uniduck Theme
+Author: Stjepko Juras
+Version: 1.0
+**/
+
+/* colors */
+
+@font-face {
+    font-family: Museo;
+    src: url("/assets/fonts/");
+}
+
+body {
+  font-family: Museo, Arial, sans-serif;
+}
+
+.post-content {
+  padding: 0 10rem;
+}
+
+.post-content p {
+  font-size: 20px;
+  font-weight: bold;
+  color: #F00;
+}
+
+.post-content img  {
+  margin: 0 -10rem;
+  width: 100%;
+}
+
+.proba {
+  color:orange;
+}
+/* styling of right buttons *
+
+/* footer */
