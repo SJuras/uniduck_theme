@@ -19,19 +19,30 @@
 
 <?php get_header(); ?>
 
-<div class="container">
-  <h1 class="site-title">
-   <?php
-       $site_description = get_bloginfo( 'description', 'display' );
-       $site_name = get_bloginfo( 'name' );
+<div class="header-post">
+  <div class="container">
+    <h1 class="site-title">
+     <?php
+         $site_description = get_bloginfo( 'description', 'display' );
+         $site_name = get_bloginfo( 'name' );
 
-       if ( $site_description && ( is_home() || is_front_page() ) ):
-                  echo  $site_description;
-                endif;
-   ?>
-  </h1>
+         if ( $site_description && ( is_home() || is_front_page() ) ):
+                    echo  $site_description;
+                  endif;
+     ?>
+    </h1>
 
-  <?php get_search_form(); ?>
+    <form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+      <button type="submit" class="search-submit" value="search"><i class="fa fa-search"></i></button>
+      <input
+        type="search"
+        class="search-field"
+        placeholder="Search blog"
+        value="<?php echo get_search_query(); ?>" name="s"
+      />
+
+    </form>
+  </div>
 </div>
 
 <div class="container">
