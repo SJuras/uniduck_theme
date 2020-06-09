@@ -44,11 +44,11 @@
 
   	?>
 
-
+  <div class="post-featured-tags">
     <?php
       echo show_tags();
     ?>
-
+  </div>
     <?php
     // show related posts
 

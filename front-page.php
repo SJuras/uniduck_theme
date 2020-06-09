@@ -19,8 +19,9 @@
 
 <?php get_header(); ?>
 
-<div class="header-post">
-  <div class="container">
+
+<div class="container">
+  <div class="post-header">
     <h1 class="site-title">
      <?php
          $site_description = get_bloginfo( 'description', 'display' );
@@ -31,17 +32,18 @@
                   endif;
      ?>
     </h1>
+    <div class="form-wrapper">
+      <form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+        <button type="submit" class="search-submit" value="search"><i class="fa fa-search"></i></button>
+        <input
+          type="search"
+          class="search-field"
+          placeholder="Search blog"
+          value="<?php echo get_search_query(); ?>" name="s"
+        />
 
-    <form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-      <button type="submit" class="search-submit" value="search"><i class="fa fa-search"></i></button>
-      <input
-        type="search"
-        class="search-field"
-        placeholder="Search blog"
-        value="<?php echo get_search_query(); ?>" name="s"
-      />
-
-    </form>
+      </form>
+    </div>
   </div>
 </div>
 
@@ -85,7 +87,7 @@
 
 
     <div>
-        <a href="#" id="load_more" class="btn btn-primary">Load More</a>
+        <a href="#" id="load_more" class="btn">Load More</a>
     </div>
 
 

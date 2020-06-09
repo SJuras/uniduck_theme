@@ -1,27 +1,43 @@
 <article id="post-<?php the_ID(); ?>" class="line-post<?php if ( $featured ) : ?> featured<?php endif; ?>">
 
-	<img src="<?php the_post_thumbnail_url();?>">
+	<div class="att-image">
+		<img src="<?php the_post_thumbnail_url();?>">
+	</div>
 
-	<p><?php echo get_the_date('F d, Y'); ?></p>
+	<div class="att-date">
+		<?php echo get_the_date('F d, Y'); ?>
+	</div>
 
-	<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-	<p><?php the_excerpt(); ?></p>
-	<p><a href="<?php the_permalink(); ?>">Read More</a></p>
-
-
-
-	<?php
-		$name = 'Kreso The Duck';
-		echo $name;
-	?>
-
+	<h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 
 	<?php
 		echo show_tags();
 	?>
 
-	<div class="favs">17 favs</div>
-	<div class="comments">22 comments</div>
+	<div class="att-intro">
+		<p><?php the_excerpt(); ?></p>
+	</div>
+
+	<a href="<?php the_permalink(); ?>" class="read-more">Read More</a>
+
+	<div class="info">
+		<span class="att-author">
+			<?php
+				$name = 'Kreso The Duck';
+				echo $name;
+			?>
+		</span>
+
+		<div class="social">
+			<span class="favs">17  favs</span>
+			<span class="comments">22  comments</span>
+		</div>
+	</div>
+
+
+
+
+
 
 
 
