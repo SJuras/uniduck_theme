@@ -86,7 +86,7 @@
       <?php endif; ?>
 
 
-    <div>
+    <div class="load-more-container">
         <a href="#" id="load_more" class="btn">Load More</a>
     </div>
 
