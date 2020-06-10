@@ -19,12 +19,7 @@
 	</div>
 
 	<div class="info">
-		<span class="att-author">
-			<?php
-				$name = 'Kreso The Duck';
-				echo $name;
-			?>
-		</span>
+	  
 
 		<div class="social">
 			<span class="favs"><i class="fa fa-heart" aria-hidden="true"></i>17  favs</span>

@@ -30,7 +30,7 @@
           <i class="fas fa-user-circle"></i>
           Krešo The Duck</div>
       </div>
-      <a class="back-link" href="#">Back to blog</a>
+      <a class="back-link" href="http://localhost/uniduck/">Back to blog</a>
     </div>
     <div class="container">
     <?php
@@ -54,10 +54,11 @@
       ?>
     </div>
 
+    <p class="more-magic">More Magic</p>
+
     <?php
     $tags = wp_get_post_tags($post->ID);
     if ($tags) {
-      echo 'Related Posts';
       $first_tag = $tags[0]->term_id;
       $args=array(
         'tag__in' => array($first_tag),
@@ -68,11 +69,18 @@
       $my_query = new WP_Query($args);
       if( $my_query->have_posts() ) {
         while ($my_query->have_posts()) : $my_query->the_post(); ?>
-          <a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-          <img src="<?php the_post_thumbnail_url();?>">
-          <p><?php the_excerpt(); ?></p>
-          <p><a href="<?php the_permalink(); ?>">Read More</a></p>
-          <p><?php the_author(); ?></p>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="rel-image">
+              <img src="<?php the_post_thumbnail_url();?>">
+            </div>
+          </div>
+          <div class="col-md-6">
+              <a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><p class="rel-title"><?php the_title(); ?><p/></a>
+              <p><?php the_excerpt(); ?></p>
+              <a href="<?php the_permalink(); ?>"><p class="rel-read-more">Read More</p></a>
+          </div>
+        <div>
         <?php
         endwhile;
       }
