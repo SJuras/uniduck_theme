@@ -4,7 +4,6 @@
  */
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,19 +15,12 @@
     <meta name="description" content="Blog Site Template">
     <meta name="author" content="https://youtube.com/FollowAndrew">
     <link rel="shortcut icon" href="images/logo.png">
-
-    <?php wp_head(); ?>
-
-  </head>
-
-  <body>
-
+</head>
+<body>
+  <?php get_header(); ?>
 
     <div>
       <?php get_search_form(); ?>
     </div>
-
-
-
 
   <?php get_footer(); ?>

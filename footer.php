@@ -19,9 +19,9 @@
       </div>
       <div class="col-md-6">
         <ul class="footer-social">
-          <li>Like <span class="footer-social-uniduck">Uniduck</span> on <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/ic-facebook.svg"></li>
-          <li>Follow <span class="footer-social-uniduck">@uniduck</span> on <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/ic-twitter.svg"></li>
-          <li>Follow <span class="footer-social-uniduck">@uniduck</span> on <img src="<?php echo get_template_directory_uri(); ?>/assets/icons/ic-instagram.svg"></li>
+          <li>Like <span class="footer-social-uniduck">Uniduck</span> on <a href="http://www.facebook.com"><img src="<?php echo get_template_directory_uri(); ?>/assets/icons/ic-facebook.svg"></a></li>
+          <li>Follow <span class="footer-social-uniduck">@uniduck</span> on <a href="http://www.twitter.com"><img src="<?php echo get_template_directory_uri(); ?>/assets/icons/ic-twitter.svg"></a></li>
+          <li>Follow <span class="footer-social-uniduck">@uniduck</span> on <a href="http://www.instagram.com"><img src="<?php echo get_template_directory_uri(); ?>/assets/icons/ic-instagram.svg"></a></li>
         </ul>
       </div>
     </div>

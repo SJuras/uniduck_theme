@@ -63,18 +63,54 @@ function custom_quote_function( $atts = array(), $content = null ) {
       $position = $atts['position'];
 
       if($position == 'left') {
-        return '<span class="left-custom-quote">' . $content . '</span>';
+        return '<div class="quote-wrapper-left"><span class="custom-quote">' . $content . '</span></div>';
       } elseif ($position == 'right') {
-        return '<span class="right-custom-quote">' . $content . '</span>';
+        return '<div class="quote-wrapper-right"><span class="custom-quote">' . $content . '</span></div>';
       } else {
-        return '<span class="custom-quote">' . $content . '</span>';
+        return '<div class="quote-wrapper"><span class="custom-quote">' . $content . '</span></div>';
       }
     } else {
-      return '<span class="custom-quote">' . $content . '</span>';
+      return '<div class="quote-wrapper"><span class="custom-quote">' . $content . '</span></div>';
     }
 
 }
 
 add_shortcode('custom_quote', 'custom_quote_function');
+
+
+function custom_youtube_video_function( $atts = null ) {
+    if($atts != null){
+      $videoid = $atts['videoid'];
+        if($videoid != null && $videoid != "") {
+          return '<div class="youtube-video">
+                    <div class="youtube-video-inner">
+                    <iframe src="https://www.youtube.com/embed/' . $videoid . '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                  </div>';
+        }
+    }
+}
+
+add_shortcode('custom_youtube_video', 'custom_youtube_video_function');
+
+// image filters/decorators
+
+function wrapImageWithFigure( $content ) {
+
+   // A regular expression of what to look for.
+   $pattern = '/(<img([^>]*)>)/i';
+   // What to replace it with. $1 refers to the content in the first 'capture group', in parentheses above
+   $replacement = '<figure>$1</figure>';
+
+   // run preg_replace() on the $content
+   $content = preg_replace( $pattern, $replacement, $content );
+
+   // return the processed content
+   return $content;
+}
+
+add_filter( 'the_content', 'wrapImageWithFigure' );
+
+
 
 ?>

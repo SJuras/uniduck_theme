@@ -15,10 +15,8 @@
 	?>
 
 	<div class="att-intro">
-		<p><?php the_excerpt(); ?></p>
+		<p><?php the_excerpt(); ?><a href="<?php the_permalink(); ?>" class="read-more">Read More</a></p>
 	</div>
-
-	<a href="<?php the_permalink(); ?>" class="read-more">Read More</a>
 
 	<div class="info">
 		<span class="att-author">
@@ -29,17 +27,9 @@
 		</span>
 
 		<div class="social">
-			<span class="favs">17  favs</span>
-			<span class="comments">22  comments</span>
+			<span class="favs"><i class="fa fa-heart" aria-hidden="true"></i>17  favs</span>
+			<span class="comments"><i class='fas fa-comment'></i>22  comments</span>
 		</div>
 	</div>
-
-
-
-
-
-
-
-
 
 </article><!-- .post -->

@@ -10,24 +10,29 @@
     <meta name="author" content="https://youtube.com/FollowAndrew">
     <link rel="shortcut icon" href="images/logo.png">
 
-
 	<?php wp_head(); ?>
 
 </head>
-
 <body>
 
 <?php get_header(); ?>
 
-<div class="container">
-    <h3><?php the_title(); ?></h3>
+  <div class="full-post">
 
-    <img src="<?php the_post_thumbnail_url();?>">
+    <div class="full-post-header">
+      <div class="img-overlay"></div>
+      <img src="<?php the_post_thumbnail_url();?>">
 
-    <?php
-  		echo 'Kreso The Duck';
-  	?>
+      <div class="full-post-header-content">
+        <h1><?php the_title(); ?></h1>
 
+        <div class="att-author">
+          <i class="fas fa-user-circle"></i>
+          Krešo The Duck</div>
+      </div>
+      <a class="back-link" href="#">Back to blog</a>
+    </div>
+    <div class="container">
     <?php
 
   	if ( have_posts() ) {
@@ -43,41 +48,42 @@
 
   	?>
 
-  <div class="post-featured-tags">
-    <?php
-      echo show_tags();
-    ?>
-  </div>
-    <?php
-    // show related posts
+    <div class="post-featured-tags">
+      <?php
+        echo show_tags();
+      ?>
+    </div>
 
+    <?php
     $tags = wp_get_post_tags($post->ID);
     if ($tags) {
-    echo 'Related Posts';
-    $first_tag = $tags[0]->term_id;
-    $args=array(
-    'tag__in' => array($first_tag),
-    'post__not_in' => array($post->ID),
-    'posts_per_page'=>1,
-    'caller_get_posts'=>1
-    );
-    $my_query = new WP_Query($args);
-    if( $my_query->have_posts() ) {
-    while ($my_query->have_posts()) : $my_query->the_post(); ?>
-    <a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-    <img src="<?php the_post_thumbnail_url();?>">
-    <p><?php the_excerpt(); ?></p>
-    <p><a href="<?php the_permalink(); ?>">Read More</a></p>
-    <p><?php the_author(); ?></p>
-    <?php
-    endwhile;
+      echo 'Related Posts';
+      $first_tag = $tags[0]->term_id;
+      $args=array(
+        'tag__in' => array($first_tag),
+        'post__not_in' => array($post->ID),
+        'posts_per_page'=>1,
+        'caller_get_posts'=>1
+      );
+      $my_query = new WP_Query($args);
+      if( $my_query->have_posts() ) {
+        while ($my_query->have_posts()) : $my_query->the_post(); ?>
+          <a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+          <img src="<?php the_post_thumbnail_url();?>">
+          <p><?php the_excerpt(); ?></p>
+          <p><a href="<?php the_permalink(); ?>">Read More</a></p>
+          <p><?php the_author(); ?></p>
+        <?php
+        endwhile;
+      }
+      wp_reset_query();
     }
-    wp_reset_query();
-    }
-?>
+    ?>
+
+    </div>
+
+  </div>
 
 
-
-</div>
 
 <?php get_footer(); ?>
